@@ -1,56 +1,35 @@
 {
-  "name": "gitmojis",
-  "type": "module",
-  "version": "3.15.0",
-  "description": "An emoji guide for your commit messages.",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+  "$schema": "https://gitmoji.dev/api/gitmojis/schema",
+  "gitmojis": [
+    {
+      "emoji": "🎨",
+      "code": ":art:",
+      "description": "코드 구조 / 포맷 개선",
+      "name": "art"
+    },
+    {
+      "emoji": "⚡️",
+      "code": ":zap:",
+      "description": "성능 개선",
+      "name": "zap"
+    },
+    {
+      "emoji": "🔥",
+      "code": ":fire:",
+      "description": "코드 또는 파일 삭제",
+      "name": "fire"
+    },
+    {
+      "emoji": "🐛",
+      "code": ":bug:",
+      "description": "버그 수정",
+      "name": "bug"
+    },
+    {
+      "emoji": "🚑️",
+      "code": ":ambulance:",
+      "description": "긴급 수정 (핫픽스)",
+      "name": "ambulance"
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "dev": "nodemon --exec 'pnpm run build' --watch ./src",
-    "build": "unbuild",
-    "lint:json": "ajv --spec=draft2020 validate -s ./src/schema.json -d ./src/gitmojis.json",
-    "lint": "pnpm run lint:json && prettier --check ./src/**/*.{js,json,ts}",
-    "publishPackage": "npm publish"
-  },
-  "devDependencies": {
-    "ajv-cli": "^5.0.0",
-    "lint-staged": "^15.4.3",
-    "nodemon": "^3.1.9",
-    "prettier": "3.5.3",
-    "unbuild": "^3.5.0"
-  },
-  "author": {
-    "name": "carloscuesta",
-    "email": "hi@carloscuesta.me",
-    "url": "https://carloscuesta.me"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/carloscuesta/gitmoji/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/carloscuesta/gitmoji.git"
-  },
-  "homepage": "https://gitmoji.dev",
-  "keywords": [
-    "gitmoji",
-    "emoji",
-    "carloscuesta",
-    "commit"
-  ],
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "arrowParens": "always"
-  }
+  ]
 }
